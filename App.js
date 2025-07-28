@@ -6,8 +6,8 @@ export default function App() {
   const [agenciaData, setAgenciaData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // URL base de tu API Django (cambiar por tu IP local si usas dispositivo físico)
-  const API_BASE_URL = 'http://127.0.0.1:8000/api';
+  // URL base de tu API Django (configurable por variables de entorno)
+  const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || 'http://127.0.0.1:8000/api';
 
   const fetchAgenciaInfo = async () => {
     setLoading(true);
